@@ -65,7 +65,28 @@ class DNA:
 		dna['description']=description
 		"""
 		return dna
+
+	def complement(self):
+		stringOfSEQ	=self.SEQ
+		i=0
+		dizi=[]
+		for strings in stringOfSEQ:
+			
+			if(strings == 'a' or strings == 'A'):	
+				dizi.append('t')
+			elif(strings == 't' or strings == 'T'):
+				dizi.append('a')
+			elif(strings == 'c' or strings == 'C'):
+				dizi.append('g')
+			elif(strings == 'g' or strings == 'G'):
+				dizi.append('c')
+			else:	
+				dizi.append('x')
+			
+			i=i+1
+		self.SEQ="".join(str(x) for x in dizi)
 		
+		return self.SEQ
 		
 
 #d.olustur()
