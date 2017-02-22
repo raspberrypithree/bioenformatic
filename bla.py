@@ -47,7 +47,7 @@ class DNA:
 		Len		= length
 		Type		= self.TYPE_MOD
 		Description	= self.DESCRIPTION
-		dna=[Name, DS,Seg,DF,Len,Type,Description]
+		dna		=[Name, DS,Seg,DF,Len,Type,Description]
 		"""
 		dna=[]
 		dna={
@@ -84,14 +84,24 @@ class DNA:
 				dizi.append('x')
 			
 			i=i+1
-		self.SEQ="".join(str(x) for x in dizi)
+		self.SEQ		="".join(str(x) for x in dizi)
+		bufferDS		=self.DS
+		self.DS			=self.DF
+		self.DF			=bufferDS	
+		length		= len(self.SEQ)
+		Name  		= self.NAME
+		DS		= self.DS
+		Seg		= self.SEQ
+		DF		= self.DF
+		Len		= length
+		Type		= self.TYPE_MOD
+		Description	= self.DESCRIPTION
+		dna		=[Name, DS,Seg,DF,Len,Type,Description]
 		
-		return self.SEQ
+	
+		return dna
 		
 
-#d.olustur()
-
-#d=DNA("DNA",5,"atgatgat",3,"DNA","First DNA")
 
 
 	 
